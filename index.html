@@ -1,97 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EmotionAI - UI Prototype</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Explore emotion in language with EmotionAI, a student multimodal emotion recognition project."><title>EmotionAI — A little more understanding</title><link rel="stylesheet" href="style.css"><script src="components.js" defer></script><script src="script.js" defer></script></head>
 <body>
-
-<header class="navbar">
-  <div class="logo">EmotionAI</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#analyze">Analyze</a>
-    <a href="#about">About</a>
-  </nav>
-</header>
-
-<section id="home" class="hero">
-  <div class="hero-content">
-    <p class="small-heading">MULTIMODAL EMOTION RECOGNITION</p>
-    <h1>Understand emotions <span>through technology.</span></h1>
-    <p class="description">
-      A simple UI/UX prototype for detecting human emotions from
-      text, images and videos.
-    </p>
-    <a href="#analyze" class="main-button">Start Analysis</a>
-  </div>
-</section>
-
-<section id="analyze" class="analyze-section">
-  <div class="section-title">
-    <p class="small-heading">CHOOSE INPUT</p>
-    <h2>Select an Input Modality</h2>
-    <p>Hover over a card to explore the available input types.</p>
-  </div>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="card-icon">T</div>
-      <h3>Text</h3>
-      <p>Analyze emotions from written text.</p>
-      <div class="hover-content">
-        <span>✓ Text input</span>
-        <span>✓ Emotion analysis</span>
-        <button onclick="selectInput('Text')">Select Text</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">I</div>
-      <h3>Image</h3>
-      <p>Upload an image for emotion recognition.</p>
-      <div class="hover-content">
-        <span>✓ Image upload</span>
-        <span>✓ Facial emotion analysis</span>
-        <button onclick="selectInput('Image')">Select Image</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">V</div>
-      <h3>Video</h3>
-      <p>Upload a video for future emotion analysis.</p>
-      <div class="hover-content">
-        <span>✓ Video upload</span>
-        <span>✓ Frame-based analysis</span>
-        <button onclick="selectInput('Video')">Select Video</button>
-      </div>
-    </div>
-
-  </div>
-
-  <div id="message" class="message">
-    Hover over a card and select an input modality.
-  </div>
-</section>
-
-<section id="about" class="about-section">
-  <p class="small-heading">ABOUT THE PROJECT</p>
-  <h2>Multimodal Emotion Recognition System</h2>
-  <p>
-    First UI/UX prototype for the SKIT CSE final-year project.
-    This phase focuses on interface design and user interaction.
-    Machine learning and backend integration will be added later.
-  </p>
-</section>
-
-<footer>
-  <p>SKIT CSE 2023–2027 | Batch 33</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+<a class="skip" href="#workspace">Skip to workspace</a>
+<header class="navbar"><a class="logo" href="#home"><span class="logo-mark" aria-hidden="true">✳</span> EmotionAI<span class="beta">LAB</span></a><nav aria-label="Main navigation"><a href="#analyze">Workspace</a><a href="#about">The project</a></nav><span class="status"><i></i> Research prototype</span></header>
+<main>
+<section class="hero wrap" id="home"><div class="hero-copy"><p class="eyebrow">A WINDOW INTO HOW WE FEEL</p><h1>Every expression<br>has a <em>story.</em></h1><p class="intro">Explore the emotions behind words, faces, and moments. A thoughtful space for making human expression a little easier to understand.</p><a class="primary" href="#analyze">Explore the workspace <span aria-hidden="true">↗</span></a><p class="hero-note">Built with curiosity. Designed around people.</p></div><div class="emotion-art" aria-label="Illustration of different emotions"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="art-label label-one">joy</span><span class="art-label label-two">surprise</span><span class="art-label label-three">calm</span><div class="face face-small"><div class="eyes">• •</div><div class="mouth"></div></div><div class="face face-main"><div class="eyes">• •</div><div class="mouth"></div></div><div class="face face-purple"><div class="eyes">• •</div><div class="mouth"></div></div><span class="art-caption">Different signals. One human story.</span></div></section>
+<section class="wrap analysis" id="analyze"><div class="section-heading"><div><p class="eyebrow">THE WORKSPACE</p><h2>Start with an expression.</h2></div><p>Choose your input.<br>Explore what it might convey.</p></div>
+<div class="workspace" id="workspace"><div class="input-side"><modality-picker></modality-picker><emotion-text-input></emotion-text-input><emotion-media-input></emotion-media-input><p id="error" role="alert"></p><div class="action-row"><span id="action-note">A small experiment in emotion.</span><button class="primary" id="analyze-button">Explore emotion <span aria-hidden="true">→</span></button></div></div>
+<aside class="result-side" aria-label="Result" aria-live="polite" aria-atomic="true"><p class="eyebrow">YOUR INSIGHT</p><div id="empty-result"><div class="empty-icon" aria-hidden="true">✳</div><h3>A little insight<br>starts here.</h3><p>Add your input and explore the emotional cues it contains.</p><div class="legend"><span>● Joy</span><span>● Sadness</span><span>● Anger</span><span>● Fear</span><span>● Surprise</span><span>● Neutral</span></div></div><div id="result" hidden><span class="result-symbol" id="result-symbol" aria-hidden="true"></span><h3 id="result-title"></h3><p id="result-description"></p><div id="cues"></div><button class="text-button" id="reset">Clear and start again ↗</button></div><p class="disclaimer">Demo, not a diagnosis. Text results use simple word matching, not a trained model. Image and video support local previews only.</p></aside></div>
+<div class="privacy"><span aria-hidden="true">◇</span><p><strong>Your expression stays yours.</strong> Inputs are processed locally in your browser. Nothing is uploaded or saved by this website.</p></div></section>
+<section class="about wrap" id="about"><div><p class="eyebrow">BEHIND THE PROJECT</p><h2>Technology with<br>a human perspective.</h2></div><div><p>EmotionAI is a final-year project exploring how machine learning and deep learning can help recognize emotion in human expression.</p><div class="about-grid"><div><span>01 / TODAY</span><h3>Exploring language</h3><p>Text research in Python notebooks, with a browser demo for exploring emotional keywords.</p></div><div><span>02 / NEXT</span><h3>A broader picture</h3><p>Connect trained models and extend the research to facial expressions and video.</p></div></div></div></section>
+</main><footer class="wrap"><a class="logo" href="#home">✳ EmotionAI</a><p>SKIT · CSE 2023–2027 · Group 33</p><span>Made to understand.</span></footer>
+</body></html>
